@@ -41,7 +41,7 @@ export class Manager {
     }
 
     isTex(filePath: string) {
-        return ['.tex', '.sty', '.cls', '.bbx', '.cbx'].indexOf(path.extname(filePath)) > -1
+        return true
     }
 
     updateWorkspace() {

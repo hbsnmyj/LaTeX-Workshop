@@ -118,8 +118,8 @@ export class Builder {
                 return undefined
             }
             if (command.args) {
-                command.args = command.args.map(arg => arg.replace('%DOC%', rootFile.replace(/\.tex$/, '').split(path.sep).join('/'))
-                                                          .replace('%DOCFILE%', path.basename(rootFile, '.tex').split(path.sep).join('/'))
+                command.args = command.args.map(arg => arg.replace('%DOC%', rootFile.replace(/\..*?$/, '').split(path.sep).join('/'))
+                                                          .replace('%DOCFILE%', path.basename(rootFile.replace(/\..*?$/, '').split(path.sep).join('/')).split(path.sep).join('/'))
                                                           .replace('%DIR%', path.dirname(rootFile).split(path.sep).join('/')))
             }
             if (magic === 'pdflatex') {
